@@ -9,6 +9,9 @@ export class AppComponent {
 
     onKeyUpMethod(e: any) {
         e = this.addSeparaters(this.validDigits(e, 3));
+        if (e[e.length - 1] === '0') {
+            e = e.substring(0, e.substring(0).length - 1);
+        }
         (document.getElementById('enterSum') as HTMLInputElement).value = e;
     }
 
